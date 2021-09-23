@@ -22,9 +22,7 @@ namespace BinarySearchTree
             //UC2-Finding size of the Binary Search Tree
             myBinaryTree.GetSize();
 
-            Console.ReadLine();
-
-            // UC3 - Searching a node in a Binary Tree
+            //UC3-Searching a node in a Binary Tree
             //Node root = new Node(56);
             //Node num1 = new Node(30);
             //Node num2 = new Node(70);
@@ -37,6 +35,7 @@ namespace BinarySearchTree
             //Console.WriteLine(nodeFind.Data);
             //Console.ReadLine();
 
+            Console.ReadLine();
 
 
         }

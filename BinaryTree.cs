@@ -106,13 +106,13 @@ namespace BinarySearchTree
                 }
                 else if (Data < root.Data)
                 {
-                    //Go to the left child
+                    //Moves to the left side
                     root = Search(root.Left, Data);
 
                 }
                 else if (Data > root.Data)
                 {
-                    //Go to the right child
+                    //Moves to the right side
                     root = Search(root.Right, Data);
                 }
                 return root;
