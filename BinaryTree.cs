@@ -6,73 +6,79 @@ using System.Threading.Tasks;
 
 namespace BinarySearchTree
 {
-        public class MyBinaryTree<T> where T : IComparable
+    public class MyBinaryTree<T> where T : IComparable
+    {
+        public T nodeData { get; set; }
+        public MyBinaryTree<T> leftTree { get; set; }
+        public MyBinaryTree<T> rightTree { get; set; }
+        public static int leftCount;
+        public static int rightCount;
+
+        public MyBinaryTree(T nodeData)
         {
-            public T nodeData { get; set; }
-            public MyBinaryTree<T> leftTree { get; set; }
-            public MyBinaryTree<T> rightTree { get; set; }
-            public static int leftCount;
-            public static int rightCount;
+            this.nodeData = nodeData;
+            this.leftTree = null;
+            this.rightTree = null;
 
-            public MyBinaryTree(T nodeData)
+        }
+        /// <summary>
+        /// UC1- Inserting a Node.
+        /// </summary>
+        /// <param name="item"></param>
+        public void Insert(T item)
+        {
+            T currentNodeValue = this.nodeData;
+            int value = currentNodeValue.CompareTo(item);
+            if ((value) > 0)
             {
-                this.nodeData = nodeData;
-                this.leftTree = null;
-                this.rightTree = null;
-
-            }
-            /// <summary>
-            /// UC1- Inserting a Node.
-            /// </summary>
-            /// <param name="item"></param>
-            public void Insert(T item)
-            {
-                T currentNodeValue = this.nodeData;
-                int value = currentNodeValue.CompareTo(item);
-                if ((value) > 0)
+                if (this.leftTree == null)
                 {
-                    if (this.leftTree == null)
-                    {
-                        this.leftTree = new MyBinaryTree<T>(item);
-                        Console.WriteLine("Inserting" + item);
-                    }
-                    else
-                        this.leftTree.Insert(item);
+                    this.leftTree = new MyBinaryTree<T>(item);
+                    Console.WriteLine("Inserting" + item);
+                }
+                else
+                    this.leftTree.Insert(item);
+            }
+            else
+            {
+                if (this.rightTree == null)
+                {
+                    this.rightTree = new MyBinaryTree<T>(item);
+                    Console.WriteLine("Inserting " + item);
                 }
                 else
                 {
-                    if (this.rightTree == null)
-                    {
-                        this.rightTree = new MyBinaryTree<T>(item);
-                        Console.WriteLine("Inserting " + item);
-                    }
-                    else
-                    {
-                        this.rightTree.Insert(item);
-                        Console.WriteLine("Inserting " + item);
-                    }
-
+                    this.rightTree.Insert(item);
+                    Console.WriteLine("Inserting " + item);
                 }
 
             }
 
-            public void Display()
-            {
-                if (this.leftTree != null)
-                {
-                    leftCount++;
-                    this.leftTree.Display();
-                }
-
-                Console.WriteLine(this.nodeData.ToString());
-                if (this.rightTree != null)
-                {
-                    rightCount++;
-                    this.rightTree.Display();
-                }
-
-            }
         }
- }
+        public void Display()
+        {
+            if (this.leftTree != null)
+            {
+                leftCount++;
+                this.leftTree.Display();
+            }
 
-          
+            Console.WriteLine(this.nodeData.ToString());
+            if (this.rightTree != null)
+            {
+                rightCount++;
+                this.rightTree.Display();
+            }
+
+        }
+
+        /// <summary>
+        /// UC2-Finding Size of the Required Node.
+        /// </summary>
+        public void GetSize()
+        {
+            Console.WriteLine("Size" + " " + (1 + leftCount + rightCount));
+        }
+
+    }
+}

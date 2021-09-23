@@ -19,6 +19,9 @@ namespace BinarySearchTree
             myBinaryTree.Insert(95);
 
             myBinaryTree.Display();
+            //UC2-Finding size of the Binary Search Tree
+            myBinaryTree.GetSize();
+
             Console.ReadLine();
 
 
