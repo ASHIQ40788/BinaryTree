@@ -55,6 +55,7 @@ namespace BinarySearchTree
             }
 
         }
+
         public void Display()
         {
             if (this.leftTree != null)
@@ -80,5 +81,43 @@ namespace BinarySearchTree
             Console.WriteLine("Size" + " " + (1 + leftCount + rightCount));
         }
 
+        /// <summary>
+        /// UC3-Search for a Node
+        /// </summary>
+        public class Node
+        {
+            //instance variables(which is outside the method and inside the class)
+            public int Data;
+            public Node Left;
+            public Node Right;
+            public Node(int Data)
+            {
+                this.Data = Data;
+            }
+        }
+        public class BinarySearchTree
+        {
+            public static Node Search(Node root, int Data)
+            {
+                if (root.Data == Data)
+                {
+                    return root; //because we found the node for which we are searching for.
+
+                }
+                else if (Data < root.Data)
+                {
+                    //Go to the left child
+                    root = Search(root.Left, Data);
+
+                }
+                else if (Data > root.Data)
+                {
+                    //Go to the right child
+                    root = Search(root.Right, Data);
+                }
+                return root;
+            }
+
+        }
     }
 }

@@ -24,6 +24,20 @@ namespace BinarySearchTree
 
             Console.ReadLine();
 
+            // UC3 - Searching a node in a Binary Tree
+            //Node root = new Node(56);
+            //Node num1 = new Node(30);
+            //Node num2 = new Node(70);
+            //Node num3 = new Node(63);
+            //root.Left = num1;
+            //root.Right = num2;
+            //num2.Left = num3;
+
+            //Node nodeFind = BinarySearchTree.Search(root, 63);
+            //Console.WriteLine(nodeFind.Data);
+            //Console.ReadLine();
+
+
 
         }
     }
