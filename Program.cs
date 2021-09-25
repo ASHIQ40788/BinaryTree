@@ -18,23 +18,28 @@ namespace BinarySearchTree
             myBinaryTree.Insert(40);
             myBinaryTree.Insert(95);
 
-            myBinaryTree.Display();
+           
             //UC2-Finding size of the Binary Search Tree
             myBinaryTree.GetSize();
 
-            //UC3-Searching a node in a Binary Tree
-            //Node root = new Node(56);
-            //Node num1 = new Node(30);
-            //Node num2 = new Node(70);
-            //Node num3 = new Node(63);
-            //root.Left = num1;
-            //root.Right = num2;
-            //num2.Left = num3;
+            //UC3-Search for a Required Node.
+            MyBinaryTree<int> binarySearch = new MyBinaryTree<int>(56);
+            binarySearch.Insert(30);
+            binarySearch.Insert(70);
+            binarySearch.Insert(22);
+            binarySearch.Insert(40);
+            binarySearch.Insert(60);
+            binarySearch.Insert(95);
+            binarySearch.Insert(11);
+            binarySearch.Insert(65);
+            binarySearch.Insert(3);
+            binarySearch.Insert(16);
+            binarySearch.Insert(63);
+            binarySearch.Insert(67);
+            binarySearch.Display();
+            Console.WriteLine(binarySearch.Search(63, binarySearch));
 
-            //Node nodeFind = BinarySearchTree.Search(root, 63);
-            //Console.WriteLine(nodeFind.Data);
-            //Console.ReadLine();
-
+            myBinaryTree.Display();
             Console.ReadLine();
 
 
